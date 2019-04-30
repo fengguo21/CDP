@@ -75,8 +75,9 @@ export const constantRoutes = [
     component: Layout,
     redirect: 'dashboard',
     meta: {
-      title: 'Current',
-      icon: 'dashboard'
+      title: 'current',
+      icon: 'dashboard',
+      affix: true
 
     },
     children: [
@@ -87,10 +88,10 @@ export const constantRoutes = [
         meta: { title: 'dashboard', icon: 'dashboard', affix: true }
       },
       {
-        path: 'dashboard',
+        path: 'traffic',
         component: () => import('@/views/dashboard/index'),
-        name: 'Dashboard',
-        meta: { title: 'dashboard', icon: 'dashboard', affix: true }
+        name: 'traffic',
+        meta: { title: 'traffic', icon: 'dashboard' }
       }
     ]
   }
@@ -182,18 +183,18 @@ export const asyncRoutes = [
   //   ]
   // },
 
-  // {
-  //   path: '/icon',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       component: () => import('@/views/icons/index'),
-  //       name: 'Icons',
-  //       meta: { title: 'icons', icon: 'icon', noCache: true }
-  //     }
-  //   ]
-  // },
+  {
+    path: '/icon',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/icons/index'),
+        name: 'Icons',
+        meta: { title: 'icons', icon: 'icon', noCache: true }
+      }
+    ]
+  }
 
   /** when your routing map is too long, you can split it into small modules **/
   // componentsRouter,

@@ -88,20 +88,45 @@ export default {
     },
     setOptions({ expectedData, actualData } = {}) {
       this.chart.setOption({
+        title: {
+          text: '支付金额',
+          textStyle: {
+            fontSize: 16,
+            color: '#404040',
+            // lineHeight: 30,
+            fontWeight: 400
+          }
+        },
+
+        grid: {
+          left: 20,
+          right: 20,
+          bottom: 20,
+          top: 60,
+          containLabel: true
+        },
         xAxis: {
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: [
+            '0:00',
+            '2:00',
+            '4:00',
+            '6:00',
+            '8:00',
+            '10:00',
+            '12:00',
+            '14:00',
+            '16:00',
+            '18:00',
+            '20:00',
+            '22:00',
+            '24:00'
+          ],
           boundaryGap: false,
           axisTick: {
             show: false
           }
         },
-        grid: {
-          left: 10,
-          right: 10,
-          bottom: 20,
-          top: 30,
-          containLabel: true
-        },
+
         tooltip: {
           trigger: 'axis',
           axisPointer: {
@@ -112,10 +137,14 @@ export default {
         yAxis: {
           axisTick: {
             show: false
+          },
+          axisLine: {
+            show: false
           }
         },
         legend: {
-          data: ['今日', '对比日']
+          data: ['今日', '对比日'],
+          right: 10
         },
         series: [
           {

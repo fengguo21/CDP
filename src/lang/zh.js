@@ -1,6 +1,8 @@
 export default {
   route: {
-    dashboard: '首页',
+    dashboard: '概览',
+    traffic: '流量来源',
+    current: '实时',
     documentation: '文档',
     guide: '引导页',
     permission: '权限测试页',
